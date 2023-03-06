@@ -1,9 +1,74 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
+<template >
+  <div>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
+    <h1 class="text-red-500 text-center">
+
+      {{ toast }}
+
+    </h1>
+
+    <h1 class="text-green-400 text-center text-xl">
+
+      {{ doubleCount }}
+
+      {{ resetCount }}
+
+
+    </h1>
+
+
+  </div>
 </template>
+<script>
+
+import { mapState } from 'vuex';
+import { mapGetters } from 'vuex'
+
+export default {
+  name: "HomeView",
+  methods: {},
+  mounted(){},
+  updated() {},
+  unmounted() {
+
+  },
+  // computed: {
+  //   count() {
+  //     return this.$store.state.count.number
+  //   },
+  //   toast() {
+  //     return this.$store.state.toast.message
+  //   }
+  // }
+
+
+  computed: {
+    localData() {
+      return 100000
+    },
+
+    ...mapGetters([
+      'doubleCount',
+      'resetCount'
+    ]),
+
+    // maxNumber() {
+    //   return this.$store.getters.doubleCount
+    // },
+    // fullResult() {
+    //   return this.$store.getters.resetCount
+    // },
+
+    ...mapState({
+      count: (state) => state.count.number,
+      toast: (state) => state.toast.message
+    })
+
+
+
+
+  }
+
+}
+</script>
+<style ></style>
