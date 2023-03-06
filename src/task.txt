@@ -1,0 +1,14 @@
+1. ROLE = 1 | SUPER ADMIN
+   ROLE = 2 | ADMIN
+
+2. ROLE = 1 | -> CREATE ADMIN | FULLNAME | USERNAME | PASSWORD |
+   ROLE = 1 | -> CREATE CATEGORY | TITLE |
+   ROLE = 1 | -> CREATE POST | TITLE | FULL TEXT | BASE IMAGE |
+
+3. ROLE = 2 | -> LOGIN {
+    role:2,
+    token:"Wdqefrgdfhjkhljo;p/",
+    username:"esgtadhbetbnd"
+}
+
+ROLE = 2 | -> CREATE POST | SELECT CATEGORY | TITLE | FULL TEXT | BASE IMAGE |
