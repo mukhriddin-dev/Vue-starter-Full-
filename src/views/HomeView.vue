@@ -1,74 +1,31 @@
-<template >
-  <div>
-
-    <h1 class="text-red-500 text-center">
-
-      {{ toast }}
-
-    </h1>
-
-    <h1 class="text-green-400 text-center text-xl">
-
-      {{ doubleCount }}
-
-      {{ resetCount }}
-
-
-    </h1>
-
-
-  </div>
-</template>
 <script>
-
-import { mapState } from 'vuex';
-import { mapGetters } from 'vuex'
+import { onMounted, computed } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
-  name: "HomeView",
-  methods: {},
-  mounted(){},
-  updated() {},
-  unmounted() {
+  setup() {
 
-  },
-  // computed: {
-  //   count() {
-  //     return this.$store.state.count.number
-  //   },
-  //   toast() {
-  //     return this.$store.state.toast.message
-  //   }
-  // }
+    const store = useStore();
 
-
-  computed: {
-    localData() {
-      return 100000
-    },
-
-    ...mapGetters([
-      'doubleCount',
-      'resetCount'
-    ]),
-
-    // maxNumber() {
-    //   return this.$store.getters.doubleCount
-    // },
-    // fullResult() {
-    //   return this.$store.getters.resetCount
-    // },
-
-    ...mapState({
-      count: (state) => state.count.number,
-      toast: (state) => state.toast.message
-    })
-
-
-
+    return {
+      addnumber: () => {
+        store.commit('INCR')
+      },
+      count: computed(() => store.state.count.number),
+      toast: computed(() => store.state.toast.message)
+    }
 
   }
-
 }
 </script>
-<style ></style>
+
+
+<template>
+  <h1>{{ count }}</h1>
+  <h1>{{ toast }}</h1>
+  <button class="bg-green-500 p-5" @click="addnumber">
+    ADD</button>
+</template>
+
+
+<style></style>
