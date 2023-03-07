@@ -1,0 +1,16 @@
+1. COMPONENTS , FILE STRUCTURE
+2. UI REUSABLE COMMENTS
+3. PROPS 
+4. ATTRIBUTE BINDING
+5. V-BIND --> :class , :value ,  v-model -> e.taregt.value && v-bind="str"
+6. v-on:click --> , @click 
+7. styled components -> 
+8. custom event -> $emit ( bidirectional data flow)
+9. Vue-router --> Nested route -> $route .go() , $router .back() . .push("/") , 
+10. VueX -> state , mutation , action , getters , modules
+11. axios ->  GET , POST , DELETE , PUT
+
+12. VUE UIKITS -> VUETIFY , FLOWBITE ,
+13. PINIA 
+
+

@@ -19,6 +19,8 @@
 
   </div>
 </template>
+
+
 <script>
 
 import { mapState } from 'vuex';
@@ -32,6 +34,7 @@ export default {
   unmounted() {
 
   },
+
   // computed: {
   //   count() {
   //     return this.$store.state.count.number
@@ -40,6 +43,15 @@ export default {
   //     return this.$store.state.toast.message
   //   }
   // }
+
+
+  let obj={
+    a:10,
+
+    info: function(){
+      clg(this.)
+    }
+  }
 
 
   computed: {
